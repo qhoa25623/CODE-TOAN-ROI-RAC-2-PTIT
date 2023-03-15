@@ -14,7 +14,7 @@ void BFS(int u)
 	visited[u] = true;
 	queue<int> q;
 	q.push(u);
-	cout << u << "(0) ";
+	cout << u << "(" << parent[u] << ") ";
 	while (!q.empty())
 	{
 		int k = q.front();
@@ -47,7 +47,7 @@ void findPath(int s, int t)
 		res.push_back(s);
 		for (int i = 0; i < res.size(); i++)
 		{
-			cout << res[i]<<" ";
+			cout << res[i] << " ";
 			if (i != res.size() - 1) {
 				cout << "<- ";
 			}
@@ -65,12 +65,6 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 	cin >> v >> e >> s >> t;
-	for (int i = 1; i <= v; i++)
-	{
-		adj[i].clear();
-		visited[i] = false;
-		parent[i] = 0;
-	}
 	for (int i = 1; i <= e; i++)
 	{
 		int x, y;

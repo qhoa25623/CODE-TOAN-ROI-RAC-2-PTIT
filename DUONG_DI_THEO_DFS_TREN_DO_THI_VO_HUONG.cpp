@@ -55,12 +55,6 @@ int main()
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 	cin >> v >> e >> s >> t;
-	for (int i = 1; i <= v; i++)
-	{
-		adj[i].clear();
-		parent[i] = 1;
-		visited[i] = false;
-	}
 	for (int i = 1; i <= e; i++)
 	{
 		int x, y;
@@ -68,7 +62,6 @@ int main()
 		adj[x].push_back(y);
 		adj[y].push_back(x);
 	}
-	cout << s << "(0) ";
 	DFS(s);
 	cout << endl;
 	findPath(s, t);
