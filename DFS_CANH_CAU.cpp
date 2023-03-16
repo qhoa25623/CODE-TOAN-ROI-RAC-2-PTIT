@@ -14,7 +14,7 @@ void DFS(int u)
   {
     if (!visited[v])
     {
-      cout << v << "(" << v << ") ";
+      cout << v << "(" << u << ") ";
       DFS(v);
     }
   }
