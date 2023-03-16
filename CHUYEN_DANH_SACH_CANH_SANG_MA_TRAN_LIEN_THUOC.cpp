@@ -20,7 +20,8 @@ int main()
 	pair<int, int>p[1005];
 	for (int i = 1; i <= m; i++) {
 		cin >> p[i].first >> p[i].second;
-		a[p[i].first][i] = a[p[i].second][i] = 1;
+		a[p[i].first][i] = 1;
+		a[p[i].second][i] = 1;
 	}
 	int num = 1;
 	cout << "   ";
