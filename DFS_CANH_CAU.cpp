@@ -50,12 +50,13 @@ int main(int argc, char **argv)
     ke[p[i].second].push_back(p[i].first);
   }
   int tplt = 0;
-  cout << "DFS(1) = ";
   for (int i = 1; i <= n; ++i)
   {
     if (!visited[i])
     {
       tplt++;
+      cout << "DFS("<<i<<") = ";
+      cout << i << "(0) ";
       DFS(i);
     }
   }
@@ -69,11 +70,13 @@ int main(int argc, char **argv)
       if (!visited[i]) {
         l++;
         cout << "DFS(" << i << ") = ";
+        cout << i << "(0) ";
         DFS2(i, p[j].first, p[j].second);
         cout << endl;
       }
     }
     memset(visited, false, sizeof(visited));
+    cout << "l = " << l << endl;
     if (l > tplt) cout << "YES\n\n"; else cout << "NO\n\n";
   }
 }

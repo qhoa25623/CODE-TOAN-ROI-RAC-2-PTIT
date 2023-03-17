@@ -66,13 +66,14 @@ int main(int argc, char **argv)
     ke[p[i].second].push_back(p[i].first);
   }
   int tplt = 0;
-  cout << "BFS(1) = ";
   for (int i = 1; i <= n; ++i)
   {
     if (!visited[i])
     {
       tplt++;
+      cout << "BFS(" << i << ") = ";
       BFS(i);
+      cout << endl;
     }
   }
   memset(visited, false, sizeof(visited));
@@ -90,6 +91,7 @@ int main(int argc, char **argv)
       }
     }
     memset(visited, false, sizeof(visited));
+    cout << "l = " << l << endl;
     if (l > tplt) cout << "YES\n\n"; else cout << "NO\n\n";
   }
 }
